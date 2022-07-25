@@ -72,9 +72,19 @@ public class Player : MonoBehaviour
         StartCoroutine(TripleShotTurnOff());
     }
 
+    public void SpeedTurnOn()
+    {
+        _speed = 10.0f;
+        StartCoroutine(SpeedTurnOff());
+    }
     IEnumerator TripleShotTurnOff()
     {
         yield return new WaitForSeconds(10.0f);
         isTripleShot = false;
+    }
+    IEnumerator SpeedTurnOff()
+    {
+        yield return new WaitForSeconds(10.0f);
+        _speed = 5.0f;
     }
 }

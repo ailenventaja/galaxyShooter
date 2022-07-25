@@ -19,7 +19,10 @@ public class Powerup : MonoBehaviour
             Player player = other.GetComponent<Player>();
             if (player != null)
             {
-                player.TripleShotTurnOn();
+                if (gameObject.tag == "SpeedPU")
+                    player.SpeedTurnOn();
+                else if (gameObject.tag == "TripleShotPU")
+                    player.TripleShotTurnOn();
             }
             Destroy(this.gameObject);
         }
